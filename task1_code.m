@@ -1,10 +1,10 @@
 % Advanced Data Analysis and Machine Learning 
-% Non-linear dimensionality reduction
-% Period 2, week 1 - Homework
+% Period 2, Exercise 1
+% Task 1 - Comparing linear and non-linear DR
 
 close all; clearvars; clc
 
-% Task 1 - Comparing linear and non-linear DR
+% Task 
 % Compare PCA and t-SNE methods by visualizing Bike Sharing Rental dataset. Explore how
 % the different features are shown in the DR components. Build a simple prediction model (for
 % example, MLP or Random Forest) to predict the count of total rental bikes and compare the
@@ -77,8 +77,6 @@ grid on
 
 %% t-SNE - default 
 Y = tsne(Xz, 'NumDimensions',2, 'Perplexity',30);
-% varNames = {'season','yr','mnth','holiday','weekday','workingday',...
-%            'weathersit','temp','atemp','hum','windspeed','cnt'};
 
 figure; scatter(Y(:,1), Y(:,2));
 title('t-SNE');
@@ -146,3 +144,4 @@ end
 
 results = table(names',RMSE',R2','VariableNames',{'Model','RMSE','R2'});
 disp(results)
+
